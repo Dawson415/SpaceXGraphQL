@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Thu Apr 16 2020 15:22:54 GMT-0700 (Pacific Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* client/src/components/Launches.js
+
+
+Created files:
+* client/src/components/MissionKey.js
+
+
+Deleted files:
+
+
+Renamed files:
