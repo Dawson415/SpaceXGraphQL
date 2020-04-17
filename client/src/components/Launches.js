@@ -26,7 +26,11 @@ export class Launches extends Component {
                         if (error) console.log(error);
                         return (
                             <Fragment>
-                                <h1>Test</h1>
+                                {
+                                    data.launches.map(launch => (
+                                        <LaunchItem key={LaunchItem.flight_number} launch={launch} />
+                                    ))
+                                }
                             </Fragment>
                         );
                     }}

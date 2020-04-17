@@ -13,7 +13,7 @@ export default function LaunchItem({
                         'text-success': launch_success,
                         'text-danger': !launch_success
                     })}>{mission_name}</span></h4>
-                    <p>Date: {launch_date_local}</p>
+                    <p>Date: <Moment format="MMMM Do YYYY, h:mm a">{launch_date_local}</Moment></p>
                 </div>
                 <div className="col-md-3">
                     <button className="btn btn-secondary">Launch Details</button>
