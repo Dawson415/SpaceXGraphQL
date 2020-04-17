@@ -20,32 +20,23 @@ const LAUNCH_QUERY = gql`
 `;
 
 export class Launch extends Component {
-    render() {
-        // const props = {};
-        // props.flight_number = 1;
-        // let { flight_number } = 1;
-        // console.log(props);
-        // console.log(props.match);
-        // console.log(props.match.params);
+  render() {
+    return (
+      // <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
+      <Query query={LAUNCH_QUERY} variables={{ flight_number: 1 }}>
+        {({ loading, error, data }) => {
+          if (loading) return <h4>Loading...</h4>;
+          if (error) console.log(error);
 
-        // flight_number = parseInt(flight_number);
-        // flight_number = 1;
-        return (
-            // <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
-            <Query query={LAUNCH_QUERY} variables={{ flight_number: 1 }}>
-                {({ loading, error, data }) => {
-                    if (loading) return <h4>Loading...</h4>;
-                    if (error) console.log(error);
-
-                    return (
-                        <div>
-                            <h4 className="my-3">Rocket Details</h4>
-                        </div>
-                    );
-                }}
-            </Query>
-        );
-    }
+          return (
+            <div>
+              <h4 className="my-3">Rocket Details</h4>
+            </div>
+          );
+        }}
+      </Query>
+    );
+  }
 }
 
 export default Launch;
