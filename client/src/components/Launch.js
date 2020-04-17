@@ -31,10 +31,18 @@ export class Launch extends Component {
           {({ loading, error, data }) => {
             if (loading) return <h4>Loading...</h4>;
             if (error) console.log(error);
-            console.log(data);
+
+            const {
+              mission_name,
+              flight_number,
+              launch_year,
+              launch_success,
+              rocket: { rocket_id, rocket_name, rocket_type }
+            } = data.launch;
+
             return (
               <div>
-                <h4 className="my-3">Rocket Details</h4>
+                <h1 className="display-4 my-3"><span className="text-dark">Mission: </span>{mission_name}</h1>
               </div>
             );
           }}
