@@ -14,8 +14,8 @@ function App() {
     <ApolloProvider client={client}>
       <div className="container">
         <img src={logo} alt="SpaceX" style={{ width: 300, display: 'block', margin: 'auto' }} />
+        <Launches />
       </div>
-      <Launches />
     </ApolloProvider>
   );
 }
