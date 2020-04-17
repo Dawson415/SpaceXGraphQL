@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { Link } from "react-router-dom";
@@ -26,18 +26,20 @@ export class Launch extends Component {
     let { flight_number } = this.props.match.params;
     flight_number = parseInt(flight_number);
     return (
-      <Query query={LAUNCH_QUERY} variables={{ flight_number: 1 }}>
-        {({ loading, error, data }) => {
-          if (loading) return <h4>Loading...</h4>;
-          if (error) console.log(error);
+      <Fragment>
+        <Query query={LAUNCH_QUERY} variables={{ flight_number: 1 }}>
+          {({ loading, error, data }) => {
+            if (loading) return <h4>Loading...</h4>;
+            if (error) console.log(error);
 
-          return (
-            <div>
-              <h4 className="my-3">Rocket Details</h4>
-            </div>
-          );
-        }}
-      </Query>
+            return (
+              <div>
+                <h4 className="my-3">Rocket Details</h4>
+              </div>
+            );
+          }}
+        </Query>
+      </Fragment>
     );
   }
 }
