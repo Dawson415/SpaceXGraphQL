@@ -8,7 +8,7 @@ import Launches from './components/Launches';
 import Launch from './components/Launch';
 
 const client = new ApolloCliect({
-  uri: '/graphql'
+  uri: 'http://localhost:5000/graphql'
 });
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
       <Router>
         <div className="container">
           <img src={logo} alt="SpaceX" style={{ width: 300, display: 'block', margin: 'auto' }} />
-          <Route exact path="/" component={Launches} />
-          <Route exact path="/launch/:flight_number" component={Launch} />
+          {/* <Route exact path="/" component={Launches} /> */}
+          {/* <Route exact path="/launch/:flight_number" component={Launch} /> */}
           <Launches />
         </div>
       </Router>
