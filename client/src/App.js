@@ -20,6 +20,7 @@ function App() {
           {/* <Route exact path="/" component={Launches} /> */}
           {/* <Route exact path="/launch/:flight_number" component={Launch} /> */}
           <Route exact path="/" component={Launches} />
+          <Route exact path="/launch/:flight_number" />
         </div>
       </Router>
     </ApolloProvider>
