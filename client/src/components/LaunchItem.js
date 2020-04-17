@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 
 export default function LaunchItem(props) {
-    console.log(props.launch);
+    //console.log(props.launch);
     return <h3>Test</h3>
     // <div className="card card-body mb-3">
     //     <div className="row">
