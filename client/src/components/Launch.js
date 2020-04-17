@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import { Link } from "react-router-dom";
+import classNames from 'classnames';
 
 const LAUNCH_QUERY = gql`
-  query LaunchQuery($flight_number: Int) {
+  query LaunchQuery($flight_number: Int!) {
     launch(flight_number: $flight_number) {
       flight_number
       mission_name
@@ -21,8 +23,9 @@ const LAUNCH_QUERY = gql`
 
 export class Launch extends Component {
   render() {
+    let { flight_number } = this.props.match.params;
+    flight_number = parseInt(flight_number);
     return (
-      // <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
       <Query query={LAUNCH_QUERY} variables={{ flight_number: 1 }}>
         {({ loading, error, data }) => {
           if (loading) return <h4>Loading...</h4>;
