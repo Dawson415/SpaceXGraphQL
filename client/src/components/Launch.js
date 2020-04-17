@@ -24,14 +24,19 @@ export class Launch extends Component {
         let { flight_number } = this.props.match.params;
         flight_number = parseInt(flight_number);
         return (
-            <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
-                return (
-                <div>
-                    <h1>Launch</h1>
-                </div>
-                );
+            console.log("Inside Launch.....");
+        <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
+            {({ loading, error, data }) => {
+                if (loading) return <h4>Loading...</h4>;
+                if (error) console.log(error);
 
-            </Query>
+                return (
+                    <div>
+                        <h4 className="my-3">Rocket Details</h4>
+                    </div>
+                );
+            }}
+        </Query>
         );
     }
 }

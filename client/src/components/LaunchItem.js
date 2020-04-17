@@ -22,7 +22,6 @@ export default function LaunchItem({ launch: { flight_number, mission_name, laun
                 </div>
 
             </div>
-            <h5>test launch item</h5>
         </div>
     )
 }
